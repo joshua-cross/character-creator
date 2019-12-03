@@ -1,0 +1,28 @@
+@mixin flexBox($direction, $justify) {
+    display: flex;
+    flex-direction: $direction;
+    flex-wrap: wrap;
+    justify-content: $justify;
+    align-items: center;
+}
+
+@mixin gold {
+    background: radial-gradient(ellipse farthest-corner at right bottom, #FEDB37 0%, #FDB931 8%, #9f7928 30%, #8A6E2F 40%, transparent 80%),
+                radial-gradient(ellipse farthest-corner at left top, #FFFFFF 0%, #FFFFAC 8%, #D1B464 25%, #5d4a1f 62.5%, #5d4a1f 100%);
+}
+
+@mixin silver {
+    background: rgb(193,193,193);
+    background: radial-gradient(ellipse farthest-corner at right bottom, rgb(182, 182, 182) 0%, rgb(180, 180, 180) 8%, #8d8d8d 30%, rgb(112, 112, 112) 40%, transparent 80%),
+    radial-gradient(ellipse farthest-corner at left top, #FFFFFF 0%, rgb(202, 202, 202) 8%, rgb(146, 146, 146) 25%, #919191 62.5%, #4b4b4b 100%);}
+
+@mixin button($color) {
+    background-color: $color;
+    color: $primary-color;
+    font-family: vinque;
+    padding: 7.5px 50px;
+    font-size: 32px;
+    border-radius: 10px;
+    border: transparent;
+    text-shadow: $text-shadow;
+}

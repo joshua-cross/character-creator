@@ -1,0 +1,38 @@
+@import "variables";
+@import "fonts";
+@import "resets";
+@import "mixins";
+
+.button_holder {
+    display: inline-block;
+    padding: 3px;
+    border-radius: 10px;
+    &:hover {
+        box-shadow: $box-shadow;
+        cursor: pointer;
+    }
+
+    button {
+        &:hover {
+            cursor: pointer;
+        }
+    }
+}
+
+.primary_button_holder {
+    @include gold;
+    @extend .button_holder;
+    button {
+        @include button($__primary_button_color);
+        
+    }
+}
+
+.secondary_button_holder {
+    @include silver;
+    @extend .button_holder;
+    button {
+        @include button($__secondary_button_color);
+    }
+}
+

@@ -1,3 +1,6 @@
+/*Site wide variables*/
+/*Variables related to the header*/
+/*Variables related to the buttons*/
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -5,7 +8,14 @@
   padding: 0px;
 }
 
+a {
+  text-decoration: none;
+  color: #ffffff;
+}
+
 body, html {
   background-color: #6F4425;
+  color: #ffffff;
+  font-family: muli;
 }
 /*# sourceMappingURL=main.css.map */

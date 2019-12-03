@@ -1,0 +1,31 @@
+@import "variables";
+@import "fonts";
+@import "resets";
+@import "mixins";
+
+.header {
+    // background-color: pink;
+    padding: $__header_padding;
+    @include flexBox(row, space-between);
+
+    div {
+        display: inline-block;
+    }
+}
+
+.header__links {
+    .header__link {
+        // background-color: orange;
+        margin-right: 10px;
+        a {
+            font-weight: 600;
+            color: $primary-color;
+        }
+
+        &:last-of-type {
+            // background-color: green;
+            margin-right: 0px;
+        }
+    }
+}
+
