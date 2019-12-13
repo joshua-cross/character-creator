@@ -1,6 +1,7 @@
 /*Site wide variables*/
 /*Variables related to the header*/
 /*Variables related to the buttons*/
+/*Variables relating to the inputs*/
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -17,5 +18,14 @@ body, html {
   background-color: #6F4425;
   color: #ffffff;
   font-family: muli;
+}
+
+h1 {
+  color: #ffffff;
+  font-family: muli;
+  letter-spacing: -0.3px;
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 20px;
 }
 /*# sourceMappingURL=main.css.map */

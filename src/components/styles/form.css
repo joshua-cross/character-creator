@@ -1,6 +1,7 @@
 /*Site wide variables*/
 /*Variables related to the header*/
 /*Variables related to the buttons*/
+/*Variables relating to the inputs*/
 @font-face {
   font-family: muli;
   src: url("/fonts/Muli-VariableFont:wght.ttf");
@@ -21,6 +22,10 @@
 a {
   text-decoration: none;
   color: #ffffff;
+}
+
+.__form_holder {
+  padding: 0px 20px;
 }
 
 .button_holder, .primary_button_holder, .secondary_button_holder {
@@ -68,5 +73,58 @@ a {
   border-radius: 10px;
   border: transparent;
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+}
+
+.label-holder {
+  margin-bottom: 10px;
+}
+
+input {
+  background-color: #452A16;
+  border-radius: 3px;
+  padding: 20px;
+  border: transparent;
+  font-family: muli;
+  font-weight: 400;
+  color: #ffffff;
+  font-size: 16px;
+  width: 570px;
+  margin-bottom: 20px;
+}
+
+.__password_strength {
+  background-color: #452A16;
+  border-radius: 3px;
+  padding: 20px;
+  border: transparent;
+  font-family: muli;
+  font-weight: 400;
+  color: #ffffff;
+  font-size: 16px;
+  width: 570px;
+  margin-bottom: 10px;
+}
+
+.__password_strength p:first-of-type {
+  margin-bottom: 10px;
+}
+
+.__password_strength p:last-of-type {
+  margin-top: 10px;
+}
+
+.__password_strength .__password_strength_bar {
+  background-color: white;
+  width: 100%;
+  height: 43px;
+  border-radius: 20px;
+  padding: 2px;
+}
+
+.__password_strength .__password_strength_bar div {
+  background-color: #893030;
+  height: 100%;
+  max-width: 100%;
+  border-radius: 20px;
 }
 /*# sourceMappingURL=form.css.map */

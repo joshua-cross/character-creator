@@ -26,3 +26,21 @@
     border: transparent;
     text-shadow: $text-shadow;
 }
+
+@mixin input {
+    background-color: $__input_color;
+    border-radius: $__input_radius;
+    padding: $__input_padding;
+    border: transparent;
+    font-family: muli;
+    font-weight: 400;
+    color: $primary-color;
+    font-size: 16px;
+    width: $__input_width;
+}
+
+@mixin headers {
+    color: $primary-color;
+    font-family: muli;
+    letter-spacing: -0.3px;
+}
