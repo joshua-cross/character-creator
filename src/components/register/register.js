@@ -2,13 +2,19 @@ import React from 'react';
 import Email from './email';
 import IsDM from './isDm';
 import PasswordStrength from './passwordStrength';
+import validator from 'validator';
 import { connect } from 'react-redux';
+import { setErrors } from '../../actions';
 
 import '../styles/form.css';
 
 class Register extends React.Component {
     constructor(props) {
         super(props);
+
+        this.state = {
+            passwordErrors: []
+        }
     }
 
     componentDidMount() {
@@ -41,6 +47,32 @@ class Register extends React.Component {
 
     }
 
+    //TODO: Have a component that checks if a username or email is already taken.
+
+    register = () => {
+        var errors = [];
+        if(this.state.passwordErrors.length > 0) {
+            errors.push(this.state.passwordErrors);
+        }
+        if(this.props.register.email) {
+            if(validator.isEmail(this.props.register.email)) {
+                errors.push("Email address is invalid");
+            }
+        } else {
+            errors.push("An email is required");
+        }
+        if(!this.props.register.username) {
+            errors.push("A username is required")
+        }
+        this.props.setErrors(errors);
+    }
+
+    passwordErrors = (errors) => {
+        this.setState({
+            passwordErrors: errors
+        })
+    }
+
     render() {
         return (
             <div className = "__form_holder">
@@ -55,10 +87,11 @@ class Register extends React.Component {
                 <Email
                 label="Password"
                 type="password"></Email>
-                <PasswordStrength></PasswordStrength>
+                <PasswordStrength
+                setErrors = {this.passwordErrors}></PasswordStrength>
                 <IsDM></IsDM>
                 <div className = "primary_button_holder">
-                    <button className = "primary_button">Register</button>
+                    <button className = "primary_button" onClick = {this.register}>Register</button>
                 </div>
                 <div className = "secondary_button_holder">
                     <button className = "primary_button" onClick={this.login}>Login</button>
@@ -76,4 +109,4 @@ const mapStateToProps = (state, ourProps) => {
     }
 }
 
-export default connect(mapStateToProps, null)(Register);
+export default connect(mapStateToProps, {setErrors})(Register);

@@ -1,6 +1,5 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { passwordSafe } from '../../actions';
 
 class PasswordStrength extends React.Component {
     constructor(props) {
@@ -57,14 +56,22 @@ class PasswordStrength extends React.Component {
             }
             if(containsNumber) {
                 width += 25;
+                errors.push("Password must contain at least 1 number.");
             }
             if(containsUppercase) {
                 width += 25;
+                errors.push("Password must contain at least 1 upper case character.");
             }
             if(containsLowercase) {
                 width += 25;
+                errors.push("Password must contain at least 1 lower case character.");
             }
             console.log("Width is: ", width)
+            if(width === 100) {
+                this.props.setErrors(errors)
+            } else {
+                this.props.setErrors(errors);
+            }
             return width
         }
         console.log("There is no password :(")
@@ -92,4 +99,4 @@ const mapStateToProps = (state, ourProps) => {
     }
 }
 
-export default connect(mapStateToProps, {passwordSafe})(PasswordStrength);
+export default connect(mapStateToProps, null)(PasswordStrength);

@@ -1,0 +1,30 @@
+@import 'fonts';
+@import 'variables';
+@import 'mixins';
+
+$__error_color: #893030;
+$__error_width: 400px;
+$__error_spacing: 10px;
+$__error_padding: 10px;
+$__error_shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
+
+.error-holder {
+    position: fixed;
+    right: 20px;
+    top: 40px;
+
+    .error {
+        background-color: $__error_color;
+        width: $__error_width;
+        padding: $__error_padding;
+        margin-bottom: $__error_spacing;
+        box-shadow: $__error_shadow;
+        transition: background-color 0.25s ease, width 0.25s ease;
+
+        &:hover {
+            background-color: darken($color: $__error_color, $amount: 7%);
+            cursor: pointer;
+            width: $__error_width + 10px;
+        }
+    }
+}

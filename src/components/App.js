@@ -4,11 +4,13 @@ import './styles/main.css';
 import {BrowserRouter, Route} from 'react-router-dom';
 import Header from './header/header';
 import Register from './register/register';
+import ErrorHolder from './errors/errorHolder';
 
 const homePage = () => {
   return(
     <div>
       <Header />
+      <ErrorHolder />
     </div>
   )
 }
@@ -17,6 +19,7 @@ const register = () => {
   return(
     <div>
       <Header />
+      <ErrorHolder />
       <Register />
     </div>
   )
@@ -26,6 +29,7 @@ const login = () => {
   return(
     <div>
       <Header />
+      <ErrorHolder />
     </div>
   )
 }
@@ -34,6 +38,7 @@ const about = () => {
   return(
     <div>
       <Header />
+      <ErrorHolder />
     </div>
   )
 }

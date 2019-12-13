@@ -29,12 +29,16 @@ export const registerIsDm = (dm) => {
     }
 }
 
-export const passwordSafe = (safe, errors) => {
+export const setErrors = (errors) => {
     return {
-        type: "PASSWORD_SAFE",
-        payload: {
-            safe: safe,
-            errors: errors
-        }
+        type: "SET_ERRORS",
+        payload: errors
+    }
+}
+
+export const removeError = (i) => {
+    return {
+        type: "REMOVE_ERROR",
+        payload: i
     }
 }
